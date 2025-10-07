@@ -1,4 +1,5 @@
 import streamlit as st
+st.image("soulvest_logo.png", width=250)
 
 # ✅ Updated mood songs with valid YouTube URLs
 mood_songs = {
