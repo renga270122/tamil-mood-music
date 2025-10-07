@@ -79,3 +79,12 @@ st.markdown(f"🎶 **Mantras for {selected_chakra}:**")
 for song, url in chakra_songs[selected_chakra]:
     st.markdown(f"- [{song}]({url})")
 
+
+st.subheader("🎥 Featured Soulvest Video")
+
+st.markdown("""
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/EU6srdZF_MA" frameborder="0" allowfullscreen></iframe>
+""", unsafe_allow_html=True)
+
+st.markdown("[🔗 Visit Soulvest Channel](https://www.youtube.com/@soulvest1111)")
+
