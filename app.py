@@ -30,5 +30,5 @@ if mood in mood_songs:
 # OM Chanting section
 elif mood == "OM Chanting":
     st.subheader("🕉️ Sadhguru's OM Chanting")
-    st.video("https://www.youtube.com/watch?v=Z2qVwJZ7PzE")
+    st.video("https://www.youtube.com/watch?v=rCZ78UzGsWU")  # Sadhguru OM Chant
     st.markdown("Let the sound of OM guide your breath and stillness. Just listen and be present.")
