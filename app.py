@@ -9,28 +9,28 @@ st.title("🎶 Soulvest: Tamil Mood Music & 🕉️ Chakra Rituals")
 # ✅ Verified mood-based playlists by composer
 composer_playlists = {
     "Happy": {
-        "A.R. Rahman": "https://www.youtube.com/playlist?list=PLxIPumcDtzc3YzI-N28cFfwa5JBdxqH6j",  # ARR Happy Hits
-        "Ilaiyaraaja": "https://www.youtube.com/playlist?list=PLvWbxei1eZl9Xn1gVZrXWvQJkQvZkYwXz",  # Ilaiyaraaja Happy
-        "Yuvan Shankar Raja": "https://www.youtube.com/playlist?list=PLjity7Lwv-zphb67lDBgrHrgYyEXy_KXP",  # Yuvan Happy
-        "Harris Jayaraj": "https://www.youtube.com/playlist?list=PLFjzTuGxvGzX2gkKXKfGzvGzX2gkKXKfG",  # Harris Happy
-        "Vidyasagar": "https://www.youtube.com/playlist?list=PLXKOjDUVkrfAEslEeXrWe0dmEUvGK-Mp4",  # Vidyasagar Happy
-        "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLI9J3C8amofHxZnOAYkHC9dg40upmeyFv"  # MSV Happy
+        "A.R. Rahman": "https://www.youtube.com/playlist?list=PLxIPumcDtzc3YzI-N28cFfwa5JBdxqH6j",
+        "Ilaiyaraaja": "https://www.youtube.com/watch?v=x6f8tyHxFZY",
+        "Yuvan Shankar Raja": "https://www.youtube.com/playlist?list=PLocuwgpJy9A0wUb5S9cTUh-C4yW9xrycP",
+        "Harris Jayaraj": "https://www.youtube.com/playlist?list=PL5eRVqW0qoEBfDEznCMCfiE5mpU12gSZg",
+        "Vidyasagar": "https://music.youtube.com/playlist?list=PLEgLAfNh0RfSE2DeZIySPwFRYjHNGY4ZW",
+        "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLylD6xtQiKW6qnIk-HoWjFelJQLsLomL6"
     },
     "Sad": {
-        "A.R. Rahman": "https://www.youtube.com/playlist?list=PLxIPumcDtzc3YzI-N28cFfwa5JBdxqH6j",  # ARR Sad
-        "Ilaiyaraaja": "https://www.youtube.com/playlist?list=PLvWbxei1eZl9Xn1gVZrXWvQJkQvZkYwXz",  # Ilaiyaraaja Sad
-        "Yuvan Shankar Raja": "https://www.youtube.com/playlist?list=PLjity7Lwv-zphb67lDBgrHrgYyEXy_KXP",  # Yuvan Sad
-        "Harris Jayaraj": "https://www.youtube.com/playlist?list=PLFjzTuGxvGzX2gkKXKfGzvGzX2gkKXKfG",  # Harris Sad
-        "Vidyasagar": "https://www.youtube.com/playlist?list=PLXKOjDUVkrfAEslEeXrWe0dmEUvGK-Mp4",  # Vidyasagar Sad
-        "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLI9J3C8amofHxZnOAYkHC9dg40upmeyFv"  # MSV Sad
+        "A.R. Rahman": "https://www.youtube.com/playlist?list=PLxIPumcDtzc3YzI-N28cFfwa5JBdxqH6j",
+        "Ilaiyaraaja": "https://www.youtube.com/watch?v=x6f8tyHxFZY",
+        "Yuvan Shankar Raja": "https://www.youtube.com/playlist?list=PLocuwgpJy9A0wUb5S9cTUh-C4yW9xrycP",
+        "Harris Jayaraj": "https://www.youtube.com/playlist?list=PL5eRVqW0qoEBfDEznCMCfiE5mpU12gSZg",
+        "Vidyasagar": "https://music.youtube.com/playlist?list=PLEgLAfNh0RfSE2DeZIySPwFRYjHNGY4ZW",
+        "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLylD6xtQiKW6qnIk-HoWjFelJQLsLomL6"
     },
     "Devotional": {
-        "A.R. Rahman": "https://www.youtube.com/playlist?list=PLxIPumcDtzc3YzI-N28cFfwa5JBdxqH6j",  # ARR Devotional
-        "Ilaiyaraaja": "https://www.youtube.com/channel/UCVlWr_LN9y80smEMr0KTBOA",  # Ilaiyaraaja Devotional
-        "Yuvan Shankar Raja": "https://www.youtube.com/playlist?list=PLjity7Lwv-zphb67lDBgrHrgYyEXy_KXP",  # Yuvan Devotional
-        "Harris Jayaraj": "https://www.youtube.com/playlist?list=PLFjzTuGxvGzX2gkKXKfGzvGzX2gkKXKfG",  # Harris Devotional
-        "Vidyasagar": "https://www.youtube.com/playlist?list=PLXKOjDUVkrfAEslEeXrWe0dmEUvGK-Mp4",  # Vidyasagar Devotional
-        "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLI9J3C8amofHxZnOAYkHC9dg40upmeyFv"  # MSV Devotional
+        "A.R. Rahman": "https://www.youtube.com/playlist?list=PLxIPumcDtzc3YzI-N28cFfwa5JBdxqH6j",
+        "Ilaiyaraaja": "https://www.youtube.com/channel/UCVlWr_LN9y80smEMr0KTBOA",
+        "Yuvan Shankar Raja": "https://www.youtube.com/playlist?list=PLocuwgpJy9A0wUb5S9cTUh-C4yW9xrycP",
+        "Harris Jayaraj": "https://www.youtube.com/playlist?list=PL5eRVqW0qoEBfDEznCMCfiE5mpU12gSZg",
+        "Vidyasagar": "https://music.youtube.com/playlist?list=PLEgLAfNh0RfSE2DeZIySPwFRYjHNGY4ZW",
+        "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLylD6xtQiKW6qnIk-HoWjFelJQLsLomL6"
     }
 }
 
@@ -41,7 +41,7 @@ playlist_url = composer_playlists[mood][composer]
 
 st.subheader(f"🎧 {composer}'s {mood} Playlist")
 st.markdown(f"[Click to listen on YouTube]({playlist_url})")
-if "playlist?list=" in playlist_url:
+if "playlist?list=" in playlist_url or "watch?v=" in playlist_url:
     st.video(playlist_url)
 
 # 🕉️ OM Chanting Section
