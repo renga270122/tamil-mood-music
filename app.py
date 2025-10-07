@@ -34,30 +34,30 @@ elif mood == "OM Chanting":
     st.video("https://www.youtube.com/watch?v=rCZ78UzGsWU")  # Sadhguru OM Chant
     st.markdown("Let the sound of OM guide your breath and stillness. Just listen and be present.")
 
-# Chakra ritual module with valid YouTube URLs
+# Chakra ritual module with curated popular YouTube URLs
 chakra_songs = {
     "Root Chakra (Muladhara)": [
-        ("Bhumi Devi Stotram", "https://www.youtube.com/watch?v=Z2qVwJZ7PzE"),
-        ("Om Lam Chant", "https://www.youtube.com/watch?v=JZzKzZ1PqZQ")
+        ("LAM Chanting – Root Chakra Healing", "https://www.youtube.com/watch?v=-RBBNJtLatg"),
+        ("Root Chakra Mantra LAM – Cozy Cycles", "https://www.youtube.com/watch?v=ycT_XWMD-Zo")
     ],
     "Sacral Chakra (Svadhisthana)": [
-        ("Om Vam Chant", "https://www.youtube.com/watch?v=GoJdOUSBCmo")
+        ("VAM Chanting – Sacral Chakra Healing", "https://www.youtube.com/watch?v=6X2IIw5kCJM")
     ],
     "Solar Plexus Chakra (Manipura)": [
-        ("Om Ram Chant", "https://www.youtube.com/watch?v=dveOdwmB-Pc")
+        ("RAM Chanting – Solar Plexus Activation", "https://www.youtube.com/watch?v=jG_ybyCXLNU"),
+        ("Solar Plexus Chakra Healing Meditation", "https://www.youtube.com/watch?v=upWxfS4JzF8")
     ],
     "Heart Chakra (Anahata)": [
-        ("Shiva Shambho", "https://www.youtube.com/watch?v=GPe268zbINg"),
-        ("Om Yam Chant", "https://www.youtube.com/watch?v=e8HBVKmkgj4")
+        ("YAM Chanting – Heart Chakra Healing", "https://www.youtube.com/watch?v=zuxu4mv8luc")
     ],
     "Throat Chakra (Vishuddha)": [
-        ("Om Ham Chant", "https://www.youtube.com/watch?v=FFeviHnotek")
+        ("HAM Chanting – Throat Chakra Meditation", "https://www.youtube.com/watch?v=2NRk4_bGkaE")
     ],
     "Third Eye Chakra (Ajna)": [
-        ("Om Sham Chant", "https://www.youtube.com/watch?v=yIDE-0X46Bo")
+        ("OM Chanting – Third Eye Activation", "https://www.youtube.com/watch?v=tpg_1F0E-QQ")
     ],
     "Crown Chakra (Sahasrara)": [
-        ("OM Chanting for Crown Chakra", "https://www.youtube.com/watch?v=09rowVTVSb8")
+        ("AUM Chanting – Crown Chakra Meditation", "https://www.youtube.com/watch?v=rRp1sso0xMM")
     ]
 }
 
