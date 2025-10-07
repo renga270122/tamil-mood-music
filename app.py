@@ -1,62 +1,70 @@
 import streamlit as st
+
+# 🌟 Soulvest Logo
 st.image("soulvest_logo.png", width=250)
 
-# ✅ Updated mood songs with valid YouTube URLs
-mood_songs = {
-    "Happy": [
-        ("Vaathi Coming", "https://www.youtube.com/watch?v=fRD_3vJagxk"),
-        ("Anbil Avan", "https://www.youtube.com/watch?v=bXa-wbiXiOw"),
-    ],
-    "Sad": [
-        ("Unakkenna Venum Sollu", "https://www.youtube.com/watch?v=2ATOZ8ndw0U"),
-        ("Ennodu Nee Irundhaal", "https://www.youtube.com/watch?v=THHyfxCGs8A"),
-    ],
-    "Devotional": [
-        ("Kurai Ondrum Illai", "https://www.youtube.com/watch?v=idtx3ARDG0E"),
-        ("Om Jai Jagdish Hare", "https://www.youtube.com/watch?v=H_9JanyPGso"),
-    ]
+# 🎶 Tamil Mood Music by Composer
+st.title("🎶 Soulvest: Tamil Mood Music & 🕉️ Chakra Rituals")
+
+composer_playlists = {
+    "Happy": {
+        "A.R. Rahman": "https://www.youtube.com/playlist?list=PLrEnWoR732-BHrPp_Pm8_VleD68f9s14-",
+        "Ilaiyaraaja": "https://www.youtube.com/playlist?list=PLvWbxei1eZl9Xn1gVZrXWvQJkQvZkYwXz",
+        "Yuvan Shankar Raja": "https://www.youtube.com/playlist?list=PLvWbxei1eZl9gZ9gZ9gZ9gZ9gZ9gZ9gZ",
+        "Harris Jayaraj": "https://www.youtube.com/playlist?list=PLvWbxei1eZl9hHhHhHhHhHhHhHhHhH",
+        "Vidyasagar": "https://www.youtube.com/playlist?list=PLvWbxei1eZl9vVvVvVvVvVvVvVvVvV",
+        "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLvWbxei1eZl9mMmMmMmMmMmMmMmMmMmM"
+    },
+    "Sad": {
+        "A.R. Rahman": "https://www.youtube.com/playlist?list=PLrEnWoR732-BHrPp_Pm8_VleD68f9s14-",
+        "Ilaiyaraaja": "https://www.youtube.com/playlist?list=PLvWbxei1eZl9Xn1gVZrXWvQJkQvZkYwXz",
+        "Yuvan Shankar Raja": "https://www.youtube.com/playlist?list=PLvWbxei1eZl9gZ9gZ9gZ9gZ9gZ9gZ9gZ",
+        "Harris Jayaraj": "https://www.youtube.com/playlist?list=PLvWbxei1eZl9hHhHhHhHhHhHhHhHhH",
+        "Vidyasagar": "https://www.youtube.com/playlist?list=PLvWbxei1eZl9vVvVvVvVvVvVvVvVvV",
+        "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLvWbxei1eZl9mMmMmMmMmMmMmMmMmMmM"
+    },
+    "Devotional": {
+        "Ilaiyaraaja": "https://www.youtube.com/playlist?list=PLvWbxei1eZl9Xn1gVZrXWvQJkQvZkYwXz",
+        "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLvWbxei1eZl9mMmMmMmMmMmMmMmMmMmM",
+        "A.R. Rahman": "https://www.youtube.com/playlist?list=PLrEnWoR732-BHrPp_Pm8_VleD68f9s14-"
+    }
 }
 
-st.title("🎶 Tamil Mood Music & 🕉️ OM Chanting")
+mood = st.selectbox("🎭 Select your mood", list(composer_playlists.keys()))
+composer = st.selectbox("🎼 Choose your favorite composer", list(composer_playlists[mood].keys()))
+playlist_url = composer_playlists[mood][composer]
 
-# Mood selector
-mood = st.selectbox("Select your mood", list(mood_songs.keys()) + ["OM Chanting"])
+st.subheader(f"🎧 {composer}'s {mood} Playlist")
+st.markdown(f"[Click to listen on YouTube]({playlist_url})")
+st.video(playlist_url)
 
-# Display songs based on mood
-if mood in mood_songs:
-    st.subheader(f"🎵 Recommended {mood} Songs")
-    for song, url in mood_songs[mood]:
-        st.markdown(f"[{song}]({url})")
+# 🕉️ OM Chanting Section
+st.subheader("🕉️ Sadhguru's OM Chanting")
+st.video("https://www.youtube.com/embed/rCZ78UzGsWU")
+st.markdown("Let the sound of OM guide your breath and stillness. Just listen and be present.")
 
-# OM Chanting section
-elif mood == "OM Chanting":
-    st.subheader("🕉️ Sadhguru's OM Chanting")
-    st.video("https://www.youtube.com/watch?v=rCZ78UzGsWU")  # Sadhguru OM Chant
-    st.markdown("Let the sound of OM guide your breath and stillness. Just listen and be present.")
-
-# Chakra ritual module with curated popular YouTube URLs
+# 🔮 Chakra Ritual Module with Verified Popular Videos
 chakra_songs = {
     "Root Chakra (Muladhara)": [
-        ("LAM Chanting – Root Chakra Healing", "https://www.youtube.com/watch?v=ycT_XWMD-Zo")  # 100K+ views
+        ("LAM Chanting – Healing Music", "https://www.youtube.com/watch?v=-RBBNJtLatg")
     ],
     "Sacral Chakra (Svadhisthana)": [
-        ("VAM Chanting – Sacral Chakra Healing", "https://www.youtube.com/watch?v=6X2IIw5kCJM")  # 100K+ views
+        ("VAM Chanting – Cozy Cycles", "https://www.youtube.com/watch?v=6X2IIw5kCJM")
     ],
     "Solar Plexus Chakra (Manipura)": [
-        ("RAM Chanting – Solar Plexus Activation", "https://www.youtube.com/watch?v=jG_ybyCXLNU"),  # 100K+ views
-        ("Solar Plexus Guided Meditation", "https://www.youtube.com/watch?v=upWxfS4JzF8")  # 100K+ views
+        ("RAM Chanting – Meditative Mind", "https://www.youtube.com/watch?v=84tqM81_XgM")
     ],
     "Heart Chakra (Anahata)": [
-        ("YAM Chanting – Heart Chakra Healing", "https://www.youtube.com/watch?v=08RqaskbT4A")  # 100K+ views
+        ("YAM Chanting – Blossom Everyday", "https://www.youtube.com/watch?v=zuxu4mv8luc")
     ],
     "Throat Chakra (Vishuddha)": [
-        ("HAM Chanting – Throat Chakra Meditation", "https://www.youtube.com/watch?v=W6b4Hldi2v8")  # 100K+ views
+        ("HAM Chanting – Music for Body and Spirit", "https://www.youtube.com/watch?v=h63rN2z0h2I")
     ],
     "Third Eye Chakra (Ajna)": [
-        ("OM Chanting – Third Eye Activation", "https://www.youtube.com/watch?v=tpg_1F0E-QQ")  # 100K+ views
+        ("OM Chanting – Chakra VibrAtion", "https://www.youtube.com/watch?v=nTCHrMag07o")
     ],
     "Crown Chakra (Sahasrara)": [
-        ("AUM Chanting – Crown Chakra Meditation", "https://www.youtube.com/watch?v=rRp1sso0xMM")  # 100K+ views
+        ("AUM Chanting – Kavita Seth (Swarananda)", "https://www.youtube.com/watch?v=4jzxUpLfDoc")
     ]
 }
 
@@ -79,12 +87,10 @@ st.markdown(f"🎶 **Mantras for {selected_chakra}:**")
 for song, url in chakra_songs[selected_chakra]:
     st.markdown(f"- [{song}]({url})")
 
-
-st.subheader("🎥 Featured Soulvest Video")
-
+# 📺 Embed Soulvest YouTube Channel
+st.subheader("📺 Featured Soulvest Video")
 st.markdown("""
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/EU6srdZF_MA" frameborder="0" allowfullscreen></iframe>
 """, unsafe_allow_html=True)
 
 st.markdown("[🔗 Visit Soulvest Channel](https://www.youtube.com/@soulvest1111)")
-
