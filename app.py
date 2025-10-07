@@ -34,30 +34,30 @@ elif mood == "OM Chanting":
     st.video("https://www.youtube.com/watch?v=rCZ78UzGsWU")  # Sadhguru OM Chant
     st.markdown("Let the sound of OM guide your breath and stillness. Just listen and be present.")
 
-# Chakra ritual module
+# Chakra ritual module with valid YouTube URLs
 chakra_songs = {
     "Root Chakra (Muladhara)": [
         ("Bhumi Devi Stotram", "https://www.youtube.com/watch?v=Z2qVwJZ7PzE"),
         ("Om Lam Chant", "https://www.youtube.com/watch?v=JZzKzZ1PqZQ")
     ],
     "Sacral Chakra (Svadhisthana)": [
-        ("Om Vam Chant", "https://www.youtube.com/watch?v=Z2qVwJZ7PzE")
+        ("Om Vam Chant", "https://www.youtube.com/watch?v=GoJdOUSBCmo")
     ],
     "Solar Plexus Chakra (Manipura)": [
-        ("Om Ram Chant", "https://www.youtube.com/watch?v=Z2qVwJZ7PzE")
+        ("Om Ram Chant", "https://www.youtube.com/watch?v=dveOdwmB-Pc")
     ],
     "Heart Chakra (Anahata)": [
-        ("Shiva Shambho", "https://www.youtube.com/watch?v=Z2qVwJZ7PzE"),
-        ("Om Yam Chant", "https://www.youtube.com/watch?v=Z2qVwJZ7PzE")
+        ("Shiva Shambho", "https://www.youtube.com/watch?v=GPe268zbINg"),
+        ("Om Yam Chant", "https://www.youtube.com/watch?v=e8HBVKmkgj4")
     ],
     "Throat Chakra (Vishuddha)": [
-        ("Om Ham Chant", "https://www.youtube.com/watch?v=Z2qVwJZ7PzE")
+        ("Om Ham Chant", "https://www.youtube.com/watch?v=FFeviHnotek")
     ],
     "Third Eye Chakra (Ajna)": [
-        ("Om Sham Chant", "https://www.youtube.com/watch?v=Z2qVwJZ7PzE")
+        ("Om Sham Chant", "https://www.youtube.com/watch?v=yIDE-0X46Bo")
     ],
     "Crown Chakra (Sahasrara)": [
-        ("OM Chanting", "https://www.youtube.com/watch?v=rCZ78UzGsWU")
+        ("OM Chanting for Crown Chakra", "https://www.youtube.com/watch?v=09rowVTVSb8")
     ]
 }
 
@@ -79,4 +79,3 @@ st.markdown(f"💬 **Affirmation:** *{chakra_affirmations.get(chakra_key, '')}*"
 st.markdown(f"🎶 **Mantras for {selected_chakra}:**")
 for song, url in chakra_songs[selected_chakra]:
     st.markdown(f"- [{song}]({url})")
-
