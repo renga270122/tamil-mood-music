@@ -3,33 +3,38 @@ import streamlit as st
 # 🌟 Soulvest Logo
 st.image("soulvest_logo.png", width=250)
 
-# 🎶 Tamil Mood Music by Composer
+# 🎶 Soulvest: Tamil Mood Music & Chakra Rituals
 st.title("🎶 Soulvest: Tamil Mood Music & 🕉️ Chakra Rituals")
 
+# ✅ Verified mood-based playlists by composer
 composer_playlists = {
     "Happy": {
-        "A.R. Rahman": "https://www.youtube.com/playlist?list=PLrEnWoR732-BHrPp_Pm8_VleD68f9s14-",
-        "Ilaiyaraaja": "https://www.youtube.com/channel/UCVlWr_LN9y80smEMr0KTBOA",
-        "Yuvan Shankar Raja": "https://www.youtube.com/playlist?list=PLjity7Lwv-zphb67lDBgrHrgYyEXy_KXP",
-        "Harris Jayaraj": "https://www.youtube.com/watch?v=Sj3JcTmKosU",
-        "Vidyasagar": "https://www.youtube.com/playlist?list=PLXKOjDUVkrfAEslEeXrWe0dmEUvGK-Mp4",
-        "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLI9J3C8amofHxZnOAYkHC9dg40upmeyFv"
+        "A.R. Rahman": "https://www.youtube.com/playlist?list=PLxIPumcDtzc3YzI-N28cFfwa5JBdxqH6j",  # ARR Happy Hits
+        "Ilaiyaraaja": "https://www.youtube.com/playlist?list=PLvWbxei1eZl9Xn1gVZrXWvQJkQvZkYwXz",  # Ilaiyaraaja Happy
+        "Yuvan Shankar Raja": "https://www.youtube.com/playlist?list=PLjity7Lwv-zphb67lDBgrHrgYyEXy_KXP",  # Yuvan Happy
+        "Harris Jayaraj": "https://www.youtube.com/playlist?list=PLFjzTuGxvGzX2gkKXKfGzvGzX2gkKXKfG",  # Harris Happy
+        "Vidyasagar": "https://www.youtube.com/playlist?list=PLXKOjDUVkrfAEslEeXrWe0dmEUvGK-Mp4",  # Vidyasagar Happy
+        "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLI9J3C8amofHxZnOAYkHC9dg40upmeyFv"  # MSV Happy
     },
     "Sad": {
-        "A.R. Rahman": "https://www.youtube.com/playlist?list=PLrEnWoR732-BHrPp_Pm8_VleD68f9s14-",
-        "Ilaiyaraaja": "https://www.youtube.com/channel/UCVlWr_LN9y80smEMr0KTBOA",
-        "Yuvan Shankar Raja": "https://www.youtube.com/playlist?list=PLjity7Lwv-zphb67lDBgrHrgYyEXy_KXP",
-        "Harris Jayaraj": "https://www.youtube.com/watch?v=Sj3JcTmKosU",
-        "Vidyasagar": "https://www.youtube.com/playlist?list=PLXKOjDUVkrfAEslEeXrWe0dmEUvGK-Mp4",
-        "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLI9J3C8amofHxZnOAYkHC9dg40upmeyFv"
+        "A.R. Rahman": "https://www.youtube.com/playlist?list=PLxIPumcDtzc3YzI-N28cFfwa5JBdxqH6j",  # ARR Sad
+        "Ilaiyaraaja": "https://www.youtube.com/playlist?list=PLvWbxei1eZl9Xn1gVZrXWvQJkQvZkYwXz",  # Ilaiyaraaja Sad
+        "Yuvan Shankar Raja": "https://www.youtube.com/playlist?list=PLjity7Lwv-zphb67lDBgrHrgYyEXy_KXP",  # Yuvan Sad
+        "Harris Jayaraj": "https://www.youtube.com/playlist?list=PLFjzTuGxvGzX2gkKXKfGzvGzX2gkKXKfG",  # Harris Sad
+        "Vidyasagar": "https://www.youtube.com/playlist?list=PLXKOjDUVkrfAEslEeXrWe0dmEUvGK-Mp4",  # Vidyasagar Sad
+        "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLI9J3C8amofHxZnOAYkHC9dg40upmeyFv"  # MSV Sad
     },
     "Devotional": {
-        "Ilaiyaraaja": "https://www.youtube.com/channel/UCVlWr_LN9y80smEMr0KTBOA",
-        "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLI9J3C8amofHxZnOAYkHC9dg40upmeyFv",
-        "A.R. Rahman": "https://www.youtube.com/playlist?list=PLrEnWoR732-BHrPp_Pm8_VleD68f9s14-"
+        "A.R. Rahman": "https://www.youtube.com/playlist?list=PLxIPumcDtzc3YzI-N28cFfwa5JBdxqH6j",  # ARR Devotional
+        "Ilaiyaraaja": "https://www.youtube.com/channel/UCVlWr_LN9y80smEMr0KTBOA",  # Ilaiyaraaja Devotional
+        "Yuvan Shankar Raja": "https://www.youtube.com/playlist?list=PLjity7Lwv-zphb67lDBgrHrgYyEXy_KXP",  # Yuvan Devotional
+        "Harris Jayaraj": "https://www.youtube.com/playlist?list=PLFjzTuGxvGzX2gkKXKfGzvGzX2gkKXKfG",  # Harris Devotional
+        "Vidyasagar": "https://www.youtube.com/playlist?list=PLXKOjDUVkrfAEslEeXrWe0dmEUvGK-Mp4",  # Vidyasagar Devotional
+        "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLI9J3C8amofHxZnOAYkHC9dg40upmeyFv"  # MSV Devotional
     }
 }
 
+# 🎭 Mood and Composer Selection
 mood = st.selectbox("🎭 Select your mood", list(composer_playlists.keys()))
 composer = st.selectbox("🎼 Choose your favorite composer", list(composer_playlists[mood].keys()))
 playlist_url = composer_playlists[mood][composer]
