@@ -74,4 +74,8 @@ st.subheader("🧘 Chakra Rituals")
 selected_chakra = st.selectbox("Select a Chakra to Explore", list(chakra_songs.keys()))
 chakra_key = selected_chakra.split(" ")[0] + " Chakra"
 
-st.markdown(f"💬 **Affirmation:** *{chakra_affirmations.get(chakra_key, '')
+st.markdown(f"💬 **Affirmation:** *{chakra_affirmations.get(chakra_key, '')}*")
+st.markdown(f"🎶 **Mantras for {selected_chakra}:**")
+for song, url in chakra_songs[selected_chakra]:
+    st.markdown(f"- [{song}]({url})")
+
