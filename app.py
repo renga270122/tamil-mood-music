@@ -40,7 +40,8 @@ composer = st.selectbox("🎼 Choose your favorite composer", list(composer_play
 playlist_url = composer_playlists[mood][composer]
 
 st.subheader(f"🎧 {composer}'s {mood} Playlist")
-st.markdown(f"[Click to listen on YouTube]({playlist_url})")
+st.markdown(f"🔗 [Click to listen on YouTube]({playlist_url})")
+st.markdown(f"📎 Playlist URL: `{playlist_url}`")
 if "playlist?list=" in playlist_url or "watch?v=" in playlist_url:
     st.video(playlist_url)
 
