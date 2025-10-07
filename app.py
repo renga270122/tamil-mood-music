@@ -9,41 +9,59 @@ st.title("🎶 Soulvest: Tamil Mood Music & 🕉️ Chakra Rituals")
 # ✅ Verified mood-based playlists by composer with millions of views
 composer_playlists = {
     "Happy": {
-        "A.R. Rahman": "https://www.youtube.com/playlist?list=PLxIPumcDtzc3YzI-N28cFfwa5JBdxqH6j",  # API Tamil Songs
-        "Ilaiyaraaja": "https://www.youtube.com/watch?v=x6f8tyHxFZY",  # Ilaiyaraaja Happy Vibes
-        "Yuvan Shankar Raja": "https://www.youtube.com/playlist?list=PLocuwgpJy9A0wUb5S9cTUh-C4yW9xrycP",  # Aldrin Xavier
-        "Harris Jayaraj": "https://www.youtube.com/watch?v=Sj3JcTmKosU",  # Tamilian Vlogs Top 15 Hits
-        "Vidyasagar": "https://www.youtube.com/playlist?list=PLXKOjDUVkrfAEslEeXrWe0dmEUvGK-Mp4",  # Think Music India
-        "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLI9J3C8amofHxZnOAYkHC9dg40upmeyFv"  # Pyramid Glitz Music
+        "A.R. Rahman": {
+            "title": "AR Rahman Tamil Hits – API Tamil Songs",
+            "url": "https://www.youtube.com/playlist?list=PLxIPumcDtzc3YzI-N28cFfwa5JBdxqH6j"
+        },
+        "Ilaiyaraaja": {
+            "title": "Ilaiyaraaja Happy Vibes – Pyramid Glitz",
+            "url": "https://www.youtube.com/playlist?list=PLylD6xtQiKW6qnIk-HoWjFelJQLsLomL6"
+        },
+        "Yuvan Shankar Raja": {
+            "title": "Yuvan Hits – Aldrin Xavier",
+            "url": "https://www.youtube.com/playlist?list=PLocuwgpJy9A0wUb5S9cTUh-C4yW9xrycP"
+        }
     },
     "Sad": {
-        "A.R. Rahman": "https://www.youtube.com/playlist?list=PLxIPumcDtzc3YzI-N28cFfwa5JBdxqH6j",  # API Tamil Songs (includes sad hits)
-        "Ilaiyaraaja": "https://www.youtube.com/watch?v=ZzvWvQkJkQw",  # Sad Songs Jukebox
-        "Yuvan Shankar Raja": "https://www.youtube.com/playlist?list=PLocuwgpJy9A0wUb5S9cTUh-C4yW9xrycP",  # Aldrin Xavier (includes sad hits)
-        "Harris Jayaraj": "https://www.youtube.com/watch?v=Sj3JcTmKosU",  # Tamilian Vlogs
-        "Vidyasagar": "https://www.youtube.com/playlist?list=PLXKOjDUVkrfAEslEeXrWe0dmEUvGK-Mp4",  # Think Music India
-        "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLI9J3C8amofHxZnOAYkHC9dg40upmeyFv"  # Pyramid Glitz Music
+        "A.R. Rahman": {
+            "title": "AR Rahman Sad Songs – API Tamil Songs",
+            "url": "https://www.youtube.com/playlist?list=PLxIPumcDtzc3YzI-N28cFfwa5JBdxqH6j"
+        },
+        "Ilaiyaraaja": {
+            "title": "Ilaiyaraaja Sad Songs – Pyramid Glitz",
+            "url": "https://www.youtube.com/playlist?list=PLylD6xtQiKW6qnIk-HoWjFelJQLsLomL6"
+        },
+        "Yuvan Shankar Raja": {
+            "title": "Yuvan Sad Songs – Aldrin Xavier",
+            "url": "https://www.youtube.com/playlist?list=PLocuwgpJy9A0wUb5S9cTUh-C4yW9xrycP"
+        }
     },
     "Devotional": {
-        "A.R. Rahman": "https://www.youtube.com/watch?v=4jzxUpLfDoc",  # Kavita Seth AUM Chant
-        "Ilaiyaraaja": "https://www.youtube.com/channel/UCVlWr_LN9y80smEMr0KTBOA",  # Ilaiyaraaja Official
-        "Yuvan Shankar Raja": "https://www.youtube.com/playlist?list=PLocuwgpJy9A0wUb5S9cTUh-C4yW9xrycP",  # Aldrin Xavier
-        "Harris Jayaraj": "https://www.youtube.com/watch?v=Sj3JcTmKosU",  # Tamilian Vlogs
-        "Vidyasagar": "https://www.youtube.com/playlist?list=PLXKOjDUVkrfAEslEeXrWe0dmEUvGK-Mp4",  # Think Music India
-        "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLI9J3C8amofHxZnOAYkHC9dg40upmeyFv"  # Pyramid Glitz Music
+        "A.R. Rahman": {
+            "title": "AUM Chant – Kavita Seth (Swarananda)",
+            "url": "https://www.youtube.com/watch?v=4jzxUpLfDoc"
+        },
+        "Ilaiyaraaja": {
+            "title": "Ilaiyaraaja Devotional – Ilaiyaraaja Official",
+            "url": "https://www.youtube.com/channel/UCVlWr_LN9y80smEMr0KTBOA"
+        },
+        "Yuvan Shankar Raja": {
+            "title": "Yuvan Devotional – Aldrin Xavier",
+            "url": "https://www.youtube.com/playlist?list=PLocuwgpJy9A0wUb5S9cTUh-C4yW9xrycP"
+        }
     }
 }
 
 # 🎭 Mood and Composer Selection
 mood = st.selectbox("🎭 Select your mood", list(composer_playlists.keys()))
 composer = st.selectbox("🎼 Choose your favorite composer", list(composer_playlists[mood].keys()))
-playlist_url = composer_playlists[mood][composer]
+playlist_info = composer_playlists[mood][composer]
 
-st.subheader(f"🎧 {composer}'s {mood} Playlist")
-st.markdown(f"🔗 [Click to listen on YouTube]({playlist_url})")
-st.markdown(f"📎 Playlist URL: `{playlist_url}`")
-if "playlist?list=" in playlist_url or "watch?v=" in playlist_url:
-    st.video(playlist_url)
+st.subheader(f"🎧 {playlist_info['title']}")
+st.markdown(f"🔗 [Click to listen on YouTube]({playlist_info['url']})")
+st.markdown(f"📎 Playlist URL: `{playlist_info['url']}`")
+if "playlist?list=" in playlist_info['url'] or "watch?v=" in playlist_info['url']:
+    st.video(playlist_info['url'])
 
 # 🕉️ OM Chanting Section
 st.subheader("🕉️ Sadhguru's OM Chanting")
