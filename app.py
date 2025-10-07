@@ -13,24 +13,24 @@ composer_playlists = {
         "Ilaiyaraaja": "https://www.youtube.com/watch?v=x6f8tyHxFZY",  # Ilaiyaraaja Happy Vibes
         "Yuvan Shankar Raja": "https://www.youtube.com/playlist?list=PLocuwgpJy9A0wUb5S9cTUh-C4yW9xrycP",  # Aldrin Xavier
         "Harris Jayaraj": "https://www.youtube.com/watch?v=Sj3JcTmKosU",  # Tamilian Vlogs Top 15 Hits
-        "Vidyasagar": "https://music.youtube.com/playlist?list=PLEgLAfNh0RfSE2DeZIySPwFRYjHNGY4ZW",  # E Songs
+        "Vidyasagar": "https://www.youtube.com/playlist?list=PLXKOjDUVkrfAEslEeXrWe0dmEUvGK-Mp4",  # Think Music India
         "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLI9J3C8amofHxZnOAYkHC9dg40upmeyFv"  # Pyramid Glitz Music
     },
     "Sad": {
-        "A.R. Rahman": "https://www.youtube.com/playlist?list=PLxIPumcDtzc3YzI-N28cFfwa5JBdxqH6j",
-        "Ilaiyaraaja": "https://www.youtube.com/watch?v=x6f8tyHxFZY",
-        "Yuvan Shankar Raja": "https://www.youtube.com/playlist?list=PLocuwgpJy9A0wUb5S9cTUh-C4yW9xrycP",
-        "Harris Jayaraj": "https://www.youtube.com/watch?v=Sj3JcTmKosU",
-        "Vidyasagar": "https://music.youtube.com/playlist?list=PLEgLAfNh0RfSE2DeZIySPwFRYjHNGY4ZW",
-        "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLI9J3C8amofHxZnOAYkHC9dg40upmeyFv"
+        "A.R. Rahman": "https://www.youtube.com/playlist?list=PLxIPumcDtzc3YzI-N28cFfwa5JBdxqH6j",  # API Tamil Songs (includes sad hits)
+        "Ilaiyaraaja": "https://www.youtube.com/watch?v=ZzvWvQkJkQw",  # Sad Songs Jukebox
+        "Yuvan Shankar Raja": "https://www.youtube.com/playlist?list=PLocuwgpJy9A0wUb5S9cTUh-C4yW9xrycP",  # Aldrin Xavier (includes sad hits)
+        "Harris Jayaraj": "https://www.youtube.com/watch?v=Sj3JcTmKosU",  # Tamilian Vlogs
+        "Vidyasagar": "https://www.youtube.com/playlist?list=PLXKOjDUVkrfAEslEeXrWe0dmEUvGK-Mp4",  # Think Music India
+        "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLI9J3C8amofHxZnOAYkHC9dg40upmeyFv"  # Pyramid Glitz Music
     },
     "Devotional": {
-        "A.R. Rahman": "https://www.youtube.com/playlist?list=PLxIPumcDtzc3YzI-N28cFfwa5JBdxqH6j",
-        "Ilaiyaraaja": "https://www.youtube.com/channel/UCVlWr_LN9y80smEMr0KTBOA",
-        "Yuvan Shankar Raja": "https://www.youtube.com/playlist?list=PLocuwgpJy9A0wUb5S9cTUh-C4yW9xrycP",
-        "Harris Jayaraj": "https://www.youtube.com/watch?v=Sj3JcTmKosU",
-        "Vidyasagar": "https://music.youtube.com/playlist?list=PLEgLAfNh0RfSE2DeZIySPwFRYjHNGY4ZW",
-        "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLI9J3C8amofHxZnOAYkHC9dg40upmeyFv"
+        "A.R. Rahman": "https://www.youtube.com/watch?v=4jzxUpLfDoc",  # Kavita Seth AUM Chant
+        "Ilaiyaraaja": "https://www.youtube.com/channel/UCVlWr_LN9y80smEMr0KTBOA",  # Ilaiyaraaja Official
+        "Yuvan Shankar Raja": "https://www.youtube.com/playlist?list=PLocuwgpJy9A0wUb5S9cTUh-C4yW9xrycP",  # Aldrin Xavier
+        "Harris Jayaraj": "https://www.youtube.com/watch?v=Sj3JcTmKosU",  # Tamilian Vlogs
+        "Vidyasagar": "https://www.youtube.com/playlist?list=PLXKOjDUVkrfAEslEeXrWe0dmEUvGK-Mp4",  # Think Music India
+        "M.S. Viswanathan": "https://www.youtube.com/playlist?list=PLI9J3C8amofHxZnOAYkHC9dg40upmeyFv"  # Pyramid Glitz Music
     }
 }
 
