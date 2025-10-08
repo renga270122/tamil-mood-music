@@ -62,5 +62,6 @@ def render_feedback_section():
             ax.set_xlabel("Rating")
             ax.set_ylabel("Count")
             st.pyplot(fig)
-    except:
+    except Exception as e:
         st.warning(f"Could not render chart: {e}")
+
