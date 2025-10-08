@@ -2,7 +2,162 @@ import streamlit as st
 from feedback import render_feedback_section
 from affirmations import render_affirmation_section
 from chanting import render_chanting_section
+import json, os
+from datetime import datetime
+import pandas as pd
+import matplotlib.pyplot as plt
+import random
+import matplotlib.pyplot as plt
 
+if "page" not in st.session_state:
+    st.session_state.page = "home"
+
+# 🌞 Dynamic greeting based on time
+hour = datetime.now().hour
+if hour < 12:
+    greeting = "Good morning"
+elif hour < 17:
+    greeting = "Good afternoon"
+else:
+    greeting = "Good evening"
+
+# 🗓️ Current date
+today = datetime.now().strftime("%A, %d %B %Y")
+
+# 💬 Rotating affirmation or quote
+quotes = [
+    "Let your soul sing, and your spirit rise.",
+    "You are the light that heals and inspires.",
+    "Every breath is a chance to begin again.",
+    "Peace begins with a single intention.",
+    "Your energy is sacred. Protect it. Share it. Celebrate it.",
+    "The universe moves with you when you move with love."
+]
+quote = random.choice(quotes)
+
+# 🎉 Welcome message
+st.markdown(f"""
+# 🙏 {greeting}, and welcome to **Soulvest**!
+### Your sanctuary for healing music, affirmations, and spiritual growth.
+🗓️ Today is **{today}**  
+💬 *{quote}*
+""")
+
+if st.session_state.page == "home":
+    st.markdown("# 🏠 Welcome to Soulvest")
+    st.markdown("Explore healing chants, affirmations, and soulful rituals.")
+elif st.session_state.page == "chanting":
+    from chanting import render_chanting_section
+    render_chanting_section()
+elif st.session_state.page == "affirmations":
+    from affirmations import render_affirmation_section
+    render_affirmation_section()
+elif st.session_state.page == "feedback":
+    from feedback import render_feedback_section
+    render_feedback_section()
+
+st.sidebar.markdown(f"📍 You’re viewing: **{st.session_state.page.capitalize()}**")
+
+
+# 📅 Log each app visit with timestamp
+log_file = "app_views_log.json"
+now = datetime.now().strftime("%Y-%m-%d")
+
+if os.path.exists(log_file):
+    with open(log_file, "r") as f:
+        log_data = json.load(f)
+else:
+    log_data = {}
+
+log_data[now] = log_data.get(now, 0) + 1
+
+with open(log_file, "w") as f:
+    json.dump(log_data, f)
+
+
+# 🌟 Daily Affirmation
+daily_affirmations = [
+    "I am grounded, grateful, and growing.",
+    "My energy is aligned with abundance.",
+    "I radiate peace and attract positivity.",
+    "I am worthy of love, joy, and success.",
+    "I trust the rhythm of my soul."
+]
+st.sidebar.markdown("### 🌟 Daily Affirmation")
+st.sidebar.write(random.choice(daily_affirmations))
+
+# 📅 Current Date & Time
+now = datetime.now().strftime("%A, %d %B %Y — %I:%M %p")
+st.sidebar.markdown("### 📅 Today")
+st.sidebar.write(now)
+
+# 📈 App View Trends
+log_file = "app_views_log.json"
+if os.path.exists(log_file):
+    with open(log_file, "r") as f:
+        log_data = json.load(f)
+else:
+    log_data = {}
+
+df = pd.DataFrame(list(log_data.items()), columns=["Date", "Views"])
+df["Date"] = pd.to_datetime(df["Date"])
+df = df.sort_values("Date")
+
+st.sidebar.markdown("### 📈 App View Trends")
+fig, ax = plt.subplots()
+ax.plot(df["Date"], df["Views"], marker="o", color="#2E86C1")
+ax.set_title("Daily App Views")
+ax.set_xlabel("Date")
+ax.set_ylabel("Views")
+ax.grid(True)
+st.sidebar.pyplot(fig)
+
+# 🔔 Quick Navigation (simulated)
+st.sidebar.markdown("### 🔔 Quick Access")
+if st.sidebar.button("🏠 Home"):
+    st.session_state.page = "home"
+if st.sidebar.button("🕉️ Mantras & Ashtakams"):
+    st.session_state.page = "chanting"
+if st.sidebar.button("🌅 Affirmations"):
+    st.session_state.page = "affirmations"
+if st.sidebar.button("💬 Feedback"):
+    st.session_state.page = "feedback"
+
+
+# 💡 Tip of the Day
+tips = [
+    "Try chanting with breath awareness for deeper calm.",
+    "Use morning affirmations to set your intention.",
+    "Save your favorite chants to revisit anytime.",
+    "Explore Ashtakams for devotional depth.",
+    "Reflect on your mood before choosing a ritual."
+]
+st.sidebar.markdown("### 💡 Tip of the Day")
+st.sidebar.write(random.choice(tips))
+
+# 🧘 Mood Selector
+st.sidebar.markdown("### 🧘 How are you feeling today?")
+mood = st.sidebar.radio("Select your mood", ["😊 Peaceful", "😌 Grateful", "😢 Reflective", "😠 Stressed", "🙏 Seeking"])
+
+# 🕉️ Recent Saved Rituals
+if os.path.exists("my_rituals.json"):
+    with open("my_rituals.json", "r") as f:
+        entries = f.readlines()
+
+    seen = set()
+    recent = []
+    for line in reversed(entries):
+        data = json.loads(line)
+        key = (data["category"], data["name"])
+        if key not in seen:
+            seen.add(key)
+            recent.append(data)
+
+    st.sidebar.markdown("### 🕉️ Recent Rituals")
+    for data in recent[:3]:
+        st.sidebar.markdown(f"- {data['name']} ({data['category']})")
+else:
+    st.sidebar.info("No rituals saved yet.")
 
 # 🌟 Soulvest Logo (optional)
 st.image("soulvest_logo.png", width=250)
