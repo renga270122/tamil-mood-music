@@ -1,5 +1,7 @@
 import streamlit as st
 from feedback import render_feedback_section
+from affirmations import render_affirmation_section
+from chanting import render_chanting_section
 
 
 # 🌟 Soulvest Logo (optional)
@@ -234,6 +236,11 @@ if selected_singer in singer_bios:
     st.markdown(f"📝 **Bio:** {singer_bios[selected_singer]}")
 
 #st.video(singer_url)
+st.title("🧘 Soulvest: Mantras and Ashtagams")
+# 🔱 Invoke Gayatri Mantra selector
+render_chanting_section()
+st.title("🧘 Soulvest: Affirmations")
+render_affirmation_section()
 
 # 📺 Soulvest Channel Embed
 st.subheader("📺 Featured Soulvest Video")
