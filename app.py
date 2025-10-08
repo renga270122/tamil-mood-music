@@ -1,4 +1,6 @@
 import streamlit as st
+from feedback import render_feedback_section
+
 
 # 🌟 Soulvest Logo (optional)
 st.image("soulvest_logo.png", width=250)
@@ -240,3 +242,5 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.markdown("[🔗 Visit Soulvest Channel](https://www.youtube.com/@soulvest1111)")
+
+render_feedback_section()
