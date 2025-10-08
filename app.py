@@ -8,12 +8,17 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import random
 import matplotlib.pyplot as plt
+import pytz
 
 if "page" not in st.session_state:
     st.session_state.page = "home"
 
 # 🌞 Dynamic greeting based on time
-hour = datetime.now().hour
+
+# Set timezone to India
+india_tz = pytz.timezone("Asia/Kolkata")
+now = datetime.now(india_tz)
+hour = now.hour
 if hour < 12:
     greeting = "Good morning"
 elif hour < 17:
