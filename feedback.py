@@ -4,6 +4,7 @@ import streamlit as st
 import json
 from collections import Counter
 import matplotlib.pyplot as plt
+import os
 
 def render_feedback_section():
     st.markdown("## 💬 Share Your Experience with Soulvest")
@@ -54,14 +55,17 @@ def render_feedback_section():
 
     # 📊 Rating Chart
     try:
-        with open("soulvest_feedback.json", "r") as f:
-            ratings = [json.loads(line)["rating"] for line in f.readlines()]
-            fig, ax = plt.subplots()
-            ax.hist(ratings, bins=range(1, 7), edgecolor='black', color='#2E86C1')
-            ax.set_title("Soulvest Experience Ratings")
-            ax.set_xlabel("Rating")
-            ax.set_ylabel("Count")
-            st.pyplot(fig)
+        if not os.path.exists("soulvest_feedback.json"):
+            st.info("No feedback data available yet to render chart.")
+        else:
+            with open("soulvest_feedback.json", "r") as f:
+                ratings = [json.loads(line)["rating"] for line in f.readlines()]
+                fig, ax = plt.subplots()
+                ax.hist(ratings, bins=range(1, 7), edgecolor='black', color='#2E86C1')
+                ax.set_title("Soulvest Experience Ratings")
+                ax.set_xlabel("Rating")
+                ax.set_ylabel("Count")
+                st.pyplot(fig)
     except Exception as e:
         st.warning(f"Could not render chart: {e}")
 
