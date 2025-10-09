@@ -3,6 +3,7 @@ import json
 from collections import Counter
 import matplotlib.pyplot as plt
 import os
+import uuid
 from datetime import datetime, date
 
 FEEDBACK_FILE = "soulvest_feedback.json"
@@ -32,7 +33,7 @@ def render_feedback_section():
     st.markdown("## 💬 Share Your Experience with Soulvest")
 
     # 💬 Feedback Form
-    with st.form("soulvest_feedback"):
+    with st.form(key=f"soulvest_feedback_{uuid.uuid4()}"):  # ✅ dynamic key
         name = st.text_input("Your Name (optional)")
         email = st.text_input("Your Email (optional)")
         mood = st.selectbox("How did Soulvest make you feel?", ["😊 Peaceful", "🎶 Uplifted", "😢 Emotional", "🌟 Inspired", "🧘 Other"])
