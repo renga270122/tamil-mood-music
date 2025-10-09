@@ -1,9 +1,9 @@
 import streamlit as st
 import json
-import os
+from datetime import datetime
 
-def render_chanting_section():
-    st.markdown("## 🕉️ Mantras & Ashtakams")
+def render_chants():
+    st.title("🕉️ Mantras & Ashtakams")
 
     chant_types = {
         "Mantras": {
@@ -88,8 +88,8 @@ def render_chanting_section():
         }
     }
 
-    chant_category = st.radio("Choose chant type", list(chant_types.keys()))
-    selected_chant = st.selectbox("Select chant", list(chant_types[chant_category].keys()))
+    chant_category = st.radio("Choose chant type", list(chant_types.keys()), key="chant_type_selector")
+    selected_chant = st.selectbox("Select chant", list(chant_types[chant_category].keys()), key="chant_selector")
 
     if selected_chant:
         chant = chant_types[chant_category][selected_chant]
@@ -102,34 +102,10 @@ def render_chanting_section():
                 "category": chant_category,
                 "name": selected_chant,
                 "text": chant["text"],
-                "youtube": chant["youtube"]
+                "youtube": chant["youtube"],
+                "date": datetime.now().strftime("%Y-%m-%d"),
+                "tags": ["Devotional", "Peaceful"]
             }
             with open("my_rituals.json", "a") as f:
                 f.write(json.dumps(entry) + "\n")
             st.success(f"{selected_chant} added to your rituals.")
-
-    # 🧘 My Rituals Dashboard
-    st.markdown("## 🧘 My Rituals Dashboard")
-    if os.path.exists("my_rituals.json"):
-        with open("my_rituals.json", "r") as f:
-            entries = f.readlines()
-
-        # Remove duplicates based on (category, name)
-        seen = set()
-        unique_entries = []
-        for line in reversed(entries):  # Show latest first
-            data = json.loads(line)
-            key = (data["category"], data["name"])
-            if key not in seen:
-                seen.add(key)
-                unique_entries.append(data)
-
-        if unique_entries:
-            for data in unique_entries[:5]:  # Show last 5 unique
-                st.markdown(f"**{data['name']}** ({data['category']})")
-                st.code(data["text"])
-                st.markdown(f"[🎧 Replay on YouTube]({data['youtube']})")
-        else:
-            st.info("No unique rituals found.")
-    else:
-        st.info("No rituals saved yet.")
