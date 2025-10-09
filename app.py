@@ -56,10 +56,12 @@ page = st.session_state.page
 
 if page == "Home":
     render_home()
-elif page == "Morning Affirmation":
+elif st.session_state.page == "Morning Affirmation":
     render_affirmation_section(default="Morning")
-elif page == "Night Affirmation":
+elif st.session_state.page == "Night Affirmation":
     render_affirmation_section(default="Night")
+elif st.session_state.page == "Anytime Affirmation":
+    render_affirmation_section(default="Anytime")
 elif page == "Healing Chants":
     render_chants()
 elif page == "Personalized Rituals":
