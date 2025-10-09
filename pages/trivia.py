@@ -1,22 +1,6 @@
-import streamlit as st
-from datetime import datetime
-import pytz
 import random
+from datetime import datetime
 
-# 🌅 Time-based greeting
-india_tz = pytz.timezone("Asia/Kolkata")
-now = datetime.now(india_tz)
-formatted_time = now.strftime("%A, %d %B %Y — %I:%M %p")
-
-hour = now.hour
-if hour < 12:
-    vibe = "🌞 Rise and shine"
-elif hour < 17:
-    vibe = "🌿 Flow with the day"
-else:
-    vibe = "🌙 Unwind and reflect"
-
-# 🎠 Soulful trivia bank
 TRIVIA_LIST = [
     "🧘‍♂️ The word 'yoga' comes from the Sanskrit root 'yuj', meaning 'to unite'.",
     "🎶 Chanting 'Om' is believed to vibrate at the frequency of the universe: 432 Hz.",
@@ -30,21 +14,10 @@ TRIVIA_LIST = [
     "💖 Gratitude journaling for just 5 minutes a day can boost emotional resilience."
 ]
 
-def get_random_trivia():
+def get_daily_trivia():
+    seed = int(datetime.now().strftime("%Y%m%d"))
+    random.seed(seed)
     return random.choice(TRIVIA_LIST)
 
-# 🧘 Sidebar layout
-st.sidebar.markdown("### 📅 Today")
-st.sidebar.markdown(f"**{vibe}**")
-st.sidebar.markdown(f"🕒 *{formatted_time}*")
-
-st.sidebar.markdown("### 🎠 Did You Know?")
-st.sidebar.markdown(f"""
-<div style='padding: 0.5rem; font-size: 16px; line-height: 1.6; background: #f3e5f5; border-radius: 10px;'>
-    <em>{get_random_trivia()}</em>
-</div>
-""", unsafe_allow_html=True)
-
-# Optional: Refresh trivia button
-if st.sidebar.button("🔄 Show another"):
-    st.experimental_rerun()
+def get_random_trivia():
+    return random.choice(TRIVIA_LIST)

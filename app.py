@@ -14,6 +14,7 @@ from pages.playlist import render_playlist_explorer
 from pages.tamil_playlist import render_tamil_playlist
 from pages.my_rituals import render_my_rituals
 from pages.healing_practices import render_healing_practices
+from pages.app_hits import load_app_hits, get_hit_stats
 
 # 🔧 Data imports
 from data.composers import composer_thumbnails, composer_bios, composer_playlists
@@ -22,13 +23,14 @@ from data.config import PAGE_NAMES
 from pages.app_hits import log_app_hit
 from pages.my_rituals_dashboard import render_ritual_dashboard
 
-from pages.quotes import get_daily_quote
-
 # Log the visit
 if "hit_logged" not in st.session_state:
     log_app_hit()
     st.session_state.hit_logged = True
 
+# 📊 App visit stats
+hits = load_app_hits()
+total_hits, daily_hits = get_hit_stats(hits)
 
 # 🔧 Initialize page state
 if "page" not in st.session_state:
@@ -93,11 +95,6 @@ daily_affirmations = [
 st.sidebar.markdown("### 🌟 Daily Affirmation")
 st.sidebar.write(random.choice(daily_affirmations))
 
-# 📅 Current Date & Time
-now = datetime.now().strftime("%A, %d %B %Y — %I:%M %p")
-st.sidebar.markdown("### 📅 Today")
-st.sidebar.write(now)
-
 # 📈 App View Trends
 log_file = "app_views_log.json"
 today = datetime.now().strftime("%Y-%m-%d")
@@ -160,6 +157,10 @@ if os.path.exists("my_rituals.json"):
         st.sidebar.markdown(f"- {data['name']} ({data['category']})")
 else:
     st.sidebar.info("No rituals saved yet.")
+
+# 📈 App visit stats
+st.sidebar.markdown(f"📈 **Total App Visits:** {total_hits}")
+st.sidebar.markdown(f"📅 **Today's Visits:** {daily_hits}")    
 
 # 🌟 Soulvest Logo (optional)
 st.image("soulvest_logo.png", width=250)

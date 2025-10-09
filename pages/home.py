@@ -1,14 +1,18 @@
 import streamlit as st
 from utils.welcome import show_welcome_message
-from pages.app_hits import load_app_hits, get_hit_stats
 from pages.quotes import get_daily_quote
+from pages.trivia import get_random_trivia
+
+# 🌟 Soulful Sidebar Trivia
+st.sidebar.markdown("### 🎠 Did You Know?")
+st.sidebar.markdown("""
+<div style='padding: 0.5rem; font-size: 16px; line-height: 1.6; background: #f3e5f5; border-radius: 10px;'>
+    <em>{}</em>
+</div>
+""".format(get_random_trivia()), unsafe_allow_html=True)
 
 st.markdown("### 🌈 Daily Inspiration")
 st.info(f"“{get_daily_quote()}”")  
-
-# 📊 App visit stats
-hits = load_app_hits()
-total_hits, daily_hits = get_hit_stats(hits)
 
 
 # 📐 Mobile-friendly styling
@@ -58,11 +62,6 @@ def render_home():
     Soulvest Music is your sanctuary for healing, empowerment, and soulful rituals.  
     Explore affirmations, chants, playlists, and personalized rituals to uplift your spirit.
     """)
-
-    # 📈 App visit stats
-    st.markdown(f"📈 **Total App Visits:** {total_hits}")
-    st.markdown(f"📅 **Today's Visits:** {daily_hits}")
-
 
     # 💖 Footer
     st.markdown("---")
