@@ -42,10 +42,10 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.markdown("### 🌈 Daily Inspiration")
-st.info(f"“{get_daily_quote()}”")
 
 def render_home():
+    st.markdown("### 🌈 Daily Inspiration")
+    st.info(f"“{get_daily_quote()}”")    
     # 🌟 Modular welcome message (e.g., time-based greeting, quote)
     show_welcome_message()
 
@@ -62,18 +62,6 @@ def render_home():
     st.markdown(f"📈 **Total App Visits:** {total_hits}")
     st.markdown(f"📅 **Today's Visits:** {daily_hits}")
 
-    # 🌅 Styled welcome banner
-    st.markdown("""
-        <div class="welcome-banner">
-            <strong>Your sanctuary for healing music, affirmations, and spiritual growth</strong><br>
-            <div class="welcome-date">🗓️ Thursday, 09 October 2025 — 05:12 PM</div>
-            <div class="welcome-quote">💬 “The universe moves with you when you move with love.”</div>
-        </div>
-    """, unsafe_allow_html=True)
-
-    # 🌈 Daily inspiration
-    st.markdown("### 🌈 Daily Inspiration")
-    st.info("“Let your inner music guide your outer journey.”")
 
     # 💖 Footer
     st.markdown("---")
