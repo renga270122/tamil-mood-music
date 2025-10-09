@@ -67,7 +67,7 @@ def render_feedback_section():
         for entry in reversed(entries[-5:]):
             st.markdown(f"**{entry.get('name', 'Anonymous')}** rated it **{entry['rating']}/5** — {entry['mood']}")
             st.write(entry["feedback"])
-            st.caption(f"🕒 {entry['timestamp']}")
+            st.caption(f"🕒 {entry.get('timestamp', 'Unknown time')}")
     else:
         st.info("No feedback received yet.")
 
