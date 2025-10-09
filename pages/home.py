@@ -1,10 +1,12 @@
 import streamlit as st
 from utils.welcome import show_welcome_message
 from pages.app_hits import load_app_hits, get_hit_stats
+from pages.quotes import get_daily_quote
 
 # 📊 App visit stats
 hits = load_app_hits()
 total_hits, daily_hits = get_hit_stats(hits)
+
 
 # 📐 Mobile-friendly styling
 st.markdown("""
@@ -39,6 +41,9 @@ st.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
+
+st.markdown("### 🌈 Daily Inspiration")
+st.info(f"“{get_daily_quote()}”")
 
 def render_home():
     # 🌟 Modular welcome message (e.g., time-based greeting, quote)

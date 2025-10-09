@@ -22,6 +22,7 @@ from data.config import PAGE_NAMES
 from pages.app_hits import log_app_hit
 from pages.my_rituals_dashboard import render_ritual_dashboard
 
+from pages.quotes import get_daily_quote
 
 # Log the visit
 if "hit_logged" not in st.session_state:
